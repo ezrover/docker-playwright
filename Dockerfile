@@ -1,14 +1,12 @@
 FROM mcr.microsoft.com/playwright:v1.22.0-focal
-
 ENV CI=true
 WORKDIR /app
 
-# copy project
-# COPY . .
+COPY . .
 
-# Install dependencies
-RUN npm install
-RUN npx playwright install
+#RUN npm i --location=global @playwright/test
+#RUN npm i --location=global playwright
 
-# Run playwright test
-CMD [ "npx", "playwright", "test" ]
+RUN npx playwright install-deps
+
+CMD /bin/bash
