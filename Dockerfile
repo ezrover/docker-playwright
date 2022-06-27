@@ -1,15 +1,16 @@
 FROM mcr.microsoft.com/playwright:v1.22.0-focal
 
 WORKDIR /app
-COPY --from=0 /app .
 
-RUN yarn install --frozen-lockfile
-RUN npx playwright install --with-deps
+COPY package.json package-lock.json ./
+
+RUN npm ci
 
 COPY . .
 
-RUN yarn build
-CMD /bin/bash
+RUN npx playwright install-deps
+
+CMD ["npx","cross-env","ENV=qa","npm","run"]
 
 
 
