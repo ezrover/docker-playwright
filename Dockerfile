@@ -9,7 +9,7 @@ RUN npm i --location=global playwright
 
 RUN npx playwright install-deps
 
-CMD ["npx","npm","run"]
+CMD ["playwright"]
 
 
 

@@ -25,4 +25,4 @@ jobs:
         with:
           pull: true
           push: true
-          tags: ${{ github.workflow }},node17awscli/playwright:latest
+          tags: ${{ github.workflow }},node17awscli/playwright:2.0
