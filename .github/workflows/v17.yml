@@ -1,4 +1,4 @@
-name: node17awscli/playwright:latest
+name: node17awscli/node:17.x
 
 on:
   push:
