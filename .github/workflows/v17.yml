@@ -1,4 +1,4 @@
-name: node17awscli/node:17.x
+name: node17awscli/node-awscli:17.x
 
 on:
   push:
