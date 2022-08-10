@@ -1,12 +1,10 @@
-FROM mcr.microsoft.com/playwright:v1.22.0-focal
-ENV CI=true
-WORKDIR /app
+FROM mcr.microsoft.com/playwright:focal
 
-COPY . .
+WORKDIR /work
 
-#RUN npm i --location=global @playwright/test
-#RUN npm i --location=global playwright
+ADD package.json /work/package.json
 
+RUN yarn
+RUN npx playwright install
 RUN npx playwright install-deps
 
-CMD /bin/bash
